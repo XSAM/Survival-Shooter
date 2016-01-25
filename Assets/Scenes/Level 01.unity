@@ -76,14 +76,14 @@ NavMeshSettings:
     serializedVersion: 2
     agentRadius: .75
     agentHeight: 1.20000005
-    agentSlope: 13.5
-    agentClimb: .100000001
+    agentSlope: 45
+    agentClimb: .349999994
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
-    minRegionArea: 2
-    cellSize: .25
-    manualCellSize: 0
+    minRegionArea: .100000001
+    cellSize: .0250000004
+    manualCellSize: 1
   m_NavMeshData: {fileID: 23800000, guid: 728bfd619a6a24416befabfd16969bce, type: 2}
 --- !u!1 &184981015
 GameObject:
@@ -292,7 +292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!1001 &690814036
 Prefab:
   m_ObjectHideFlags: 0
