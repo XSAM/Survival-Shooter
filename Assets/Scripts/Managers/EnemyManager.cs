@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
 
     void Spawn ()
     {
-        if(playerHealth.currentHealth <= 0f)
+		if(playerHealth.instantHealth <= 0f)
         {
             return;
         }

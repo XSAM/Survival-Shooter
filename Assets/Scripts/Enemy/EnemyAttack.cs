@@ -12,7 +12,8 @@ public class EnemyAttack : MonoBehaviour
     PlayerHealth playerHealth;
     //EnemyHealth enemyHealth;
     bool playerInRange;
-    float timer;
+
+	private float nextFire=0f;
 
 
     void Awake ()
@@ -44,14 +45,13 @@ public class EnemyAttack : MonoBehaviour
 
     void Update ()
     {
-        timer += Time.deltaTime;
 
-        if(timer >= timeBetweenAttacks && playerInRange/* && enemyHealth.currentHealth > 0*/)
+        if(Time.time >= nextFire && playerInRange/* && enemyHealth.currentHealth > 0*/)
         {
             Attack ();
         }
 
-        if(playerHealth.currentHealth <= 0)
+        if(playerHealth.instantHealth <= 0)
         {
             anim.SetTrigger ("PlayerDead");
         }
@@ -60,9 +60,9 @@ public class EnemyAttack : MonoBehaviour
 
     void Attack ()
     {
-        timer = 0f;
+		nextFire=timeBetweenAttacks+Time.time;
 
-        if(playerHealth.currentHealth > 0)
+        if(playerHealth.instantHealth > 0)
         {
             playerHealth.TakeDamage (attackDamage);
         }

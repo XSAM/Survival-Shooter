@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class GameOverManager : MonoBehaviour
 
     void Update()
     {
-        if (playerHealth.currentHealth <= 0)
+        if (playerHealth.instantHealth <= 0)
         {
             anim.SetTrigger("GameOver");
         }
