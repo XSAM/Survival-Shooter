@@ -85,29 +85,6 @@ NavMeshSettings:
     cellSize: .0250000004
     manualCellSize: 1
   m_NavMeshData: {fileID: 23800000, guid: 728bfd619a6a24416befabfd16969bce, type: 2}
---- !u!1 &25996807 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 177046, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
-  m_PrefabInternal: {fileID: 690814036}
---- !u!114 &25996813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 25996807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 544f2064df03e95419b4a5147c506b08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
-  instantHealth: 0
-  healthSlider: {fileID: 1867991130}
-  damageImage: {fileID: 1167193832}
-  deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
-  flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: .100000001}
 --- !u!1 &83475688
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +636,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12002036, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: m_Positions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 477650, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -691,29 +672,37 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 5437050, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
-      propertyPath: m_UseGravity
+    - target: {fileID: 11495208, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1867991130}
+    - target: {fileID: 11495208, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: damageImage
+      value: 
+      objectReference: {fileID: 1167193832}
+    - target: {fileID: 10848546, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437050, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
-      propertyPath: m_Constraints
-      value: 84
+    - target: {fileID: 12002036, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5437050, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
-      propertyPath: m_Drag
-      value: Infinity
+    - target: {fileID: 12002036, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: m_Parameters.endWidth
+      value: .0500000007
       objectReference: {fileID: 0}
-    - target: {fileID: 13657240, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
-      propertyPath: m_Height
-      value: 1.24602175
+    - target: {fileID: 12002036, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: m_Parameters.m_EndColor.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 13657240, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
-      propertyPath: m_Center.y
-      value: .600000024
+    - target: {fileID: 12002036, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: m_Parameters.m_StartColor.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 13657240, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
-      propertyPath: m_Center.x
-      value: .200000003
+    - target: {fileID: 12002036, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
+      propertyPath: m_Positions.Array.data[2].z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a02360ec35d94ff1bdd4d834230be98, type: 2}
@@ -1274,6 +1263,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: .5
   attackDamage: 10
+--- !u!114 &1284729952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1284729942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b9d14572410594cb85d40eedfb150c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  sinkSpeed: 2.5
+  scoreValue: 10
+  deathClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
 --- !u!1 &1286081988
 GameObject:
   m_ObjectHideFlags: 0

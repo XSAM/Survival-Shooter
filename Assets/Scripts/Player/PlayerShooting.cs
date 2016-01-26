@@ -53,6 +53,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot ()
     {
+
         timer = 0f;
 
         gunAudio.Play ();
@@ -67,6 +68,7 @@ public class PlayerShooting : MonoBehaviour
 
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
+		//Debug.Log (transform.forward);
 
         if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
         {
@@ -81,5 +83,6 @@ public class PlayerShooting : MonoBehaviour
         {
             gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
         }
+		//gunLine.SetPosition (2, new Vector3(0f,0f,0f));
     }
 }
