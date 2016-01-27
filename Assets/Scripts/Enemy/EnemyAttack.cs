@@ -54,6 +54,7 @@ public class EnemyAttack : MonoBehaviour
         if(playerHealth.instantHealth <= 0)
         {
             anim.SetTrigger ("PlayerDead");
+			GetComponent<NavMeshAgent>().enabled=false;
         }
     }
 

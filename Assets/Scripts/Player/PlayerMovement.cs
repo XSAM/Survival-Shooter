@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Turing()
 	{
+		//Debug.Log (Input.mousePosition);
 		Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 
 		RaycastHit floorHit;

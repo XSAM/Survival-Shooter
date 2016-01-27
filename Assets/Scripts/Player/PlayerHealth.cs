@@ -58,7 +58,8 @@ public class PlayerHealth : MonoBehaviour
 
         instantHealth -= amount;
 
-        
+        if (instantHealth < 0)
+			instantHealth = 0;
 
         playerAudio.Play ();
 
