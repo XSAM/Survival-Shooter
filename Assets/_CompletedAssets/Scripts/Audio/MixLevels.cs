@@ -15,4 +15,16 @@ public class MixLevels : MonoBehaviour {
 	{
 		masterMixer.SetFloat ("musicVol", musicLvl);
 	}
+
+	public void IsMuted(bool isMuted)
+	{
+		if(isMuted==false)
+		{
+			masterMixer.SetFloat("masterVol",-80f);
+		}
+		else
+		{
+			masterMixer.SetFloat("masterVol",0);
+		}
+	}
 }

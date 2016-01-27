@@ -17,9 +17,18 @@ public class PlayerShooting : MonoBehaviour
     Light gunLight;
     float effectsDisplayTime = 0.2f;
 
+	Light spotLight;
+	GameObject g;
+
 
     void Awake ()
     {
+		//g = GameObject.Find ("SpotLight");
+		spotLight = GetComponentsInChildren <Light>()[1];//unstable code
+		//spotLight = g.GetComponent<Light> ();
+		//Debug.Log (spotLight.enabled);
+		if (spotLight == null)
+			Debug.Log ("F");
         shootableMask = LayerMask.GetMask ("Shootable");
         gunParticles = GetComponent<ParticleSystem> ();
         gunLine = GetComponent <LineRenderer> ();
@@ -48,6 +57,8 @@ public class PlayerShooting : MonoBehaviour
     {
         gunLine.enabled = false;
         gunLight.enabled = false;
+		spotLight.enabled = false;
+		//Debug.Log (spotLight.enabled);
     }
 
 
@@ -58,6 +69,8 @@ public class PlayerShooting : MonoBehaviour
 
         gunAudio.Play ();
 
+		spotLight.enabled = true;
+		//Debug.Log (spotLight.enabled);
         gunLight.enabled = true;
 
         gunParticles.Stop ();

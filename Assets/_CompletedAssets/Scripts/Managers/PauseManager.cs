@@ -26,7 +26,8 @@ public class PauseManager : MonoBehaviour {
 			Pause();
 		}
 	}
-	
+		
+
 	public void Pause()
 	{
 		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
@@ -38,13 +39,13 @@ public class PauseManager : MonoBehaviour {
 	{
 		if (Time.timeScale == 0)
 		{
-			paused.TransitionTo(.01f);
+			paused.TransitionTo(0.01f);//0.01f equals 0.01second
 		}
 		
 		else
 			
 		{
-			unpaused.TransitionTo(.01f);
+			unpaused.TransitionTo(0.01f);
 		}
 	}
 	
